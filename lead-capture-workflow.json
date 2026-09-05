@@ -102,6 +102,33 @@
     },
     {
       "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "#new-leads",
+          "mode": "name"
+        },
+        "text": "=   🔔 New lead captured!    \nName: {{ $json.Name }}    \nEmail: {{ $json.Email }}    \nMessage: {{ $json.Message }}",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        448,
+        112
+      ],
+      "id": "d07b7b7a-09d5-49fd-a5c5-ce82bf7de410",
+      "name": "Send a message1",
+      "webhookId": "27fd1bca-77f4-475b-b4ac-6aba5eb0f448",
+      "credentials": {
+        "slackApi": {
+          "id": "7o87j9duGSfUh5I8",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
         "sendTo": "tres.enrico@gmail.com",
         "subject": "=New Lead: {{ $json.Name }}",
         "message": "=<p>New lead received!</p>\n<p>\n<b>Name:</b> {{ $json.Name }}<br>\n<b>Email:</b> {{ $json.Email }}<br>\n<b>Message:</b> {{ $json.Message }}\n</p>",
@@ -111,7 +138,7 @@
       "typeVersion": 2.2,
       "position": [
         448,
-        0
+        -96
       ],
       "id": "9752fb3c-00b9-4459-9d91-b9e6b7d0a29b",
       "name": "Send a message",
@@ -140,11 +167,21 @@
       "main": [
         [
           {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          },
+          {
             "node": "Send a message",
             "type": "main",
             "index": 0
           }
         ]
+      ]
+    },
+    "Send a message1": {
+      "main": [
+        []
       ]
     }
   },
