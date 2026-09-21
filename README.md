@@ -5,7 +5,7 @@ instant notifications to multiple channels (Email and Slack) — a common
 real-world automation for freelancers, small businesses, and sales teams.
 
 ## Demo
-[Link to your Loom video here]
+https://www.loom.com/share/b76a2d9fa37346748541d10966e78b8b
 
 ## How it works
 1. **Webhook** receives a POST request with lead data (name, email, message)
